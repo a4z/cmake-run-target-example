@@ -7,7 +7,8 @@ function(bin_from_file fname)
     add_executable(${bname} ${fname})
 
     add_custom_target(run-${bname}
-        COMMAND $<TARGET_FILE:${bname}>
+        # COMMAND $<TARGET_FILE:${bname}>
+        COMMAND ${bname}
         DEPENDS ${bname}
         COMMENT "Running ${bname}"
         USES_TERMINAL
